@@ -18,3 +18,24 @@
 .collection-item form {
   margin-top: -5px;
 }
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1500px;
+  width: 1800px;
+  background: url(https://cdn.choosechicago.com/uploads/2021/10/choose-chicago-homepage-slider-cnt.jpg);
+  background-size: cover;
+  background-position: 1900px;
+}
+.welcome{
+  width: 500px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(255, 0, 0));
+ 
+}
