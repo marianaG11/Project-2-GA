@@ -1,7 +1,8 @@
 const Restaurant = require('../models/restaurant');
 
 module.exports = {
-    index
+    index, 
+    show
 }
 
 
@@ -12,4 +13,10 @@ function index (req, res){
             title: 'view all restaurants'
         });
     });
+}
+
+function show (req, res){
+    Restaurant.findById(req.params.id, function(err, restaurant){
+        res.render('restaurants/show', restaurants);
+    })
 }

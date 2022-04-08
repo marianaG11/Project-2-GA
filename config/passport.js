@@ -32,7 +32,7 @@ passport.use(new GoogleStrategy({
 );
 
 passport.serializeUser(function(user, cb) {
-  done(null, user.id);
+  cb(null, user.id);
 });
 
 passport.deserializeUser(function(userId, cb) {
