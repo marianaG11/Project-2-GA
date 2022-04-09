@@ -16,7 +16,7 @@ function index (req, res){
 }
 
 function show (req, res){
-    Restaurant.findById(req.params.id, function(err, restaurant){
+    Restaurant.findById(req.params.id, function(err, restaurants){
         res.render('restaurants/show', restaurants);
     })
 }

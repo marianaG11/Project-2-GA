@@ -9,12 +9,13 @@
 </head>
 <body>
     <nav>
-        <a href="/restaurants" <%- title === 'View All restaurants' ? 'class="active"' : '' %>>All restaurants</a>
         <% if (user) { %>
-          <a href="/logout">LOG OUT</a>
+          <a href="/logout" class="log-out">Log Out</a>
         <% } else { %>
-          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
-      </nav>
-</body>
-</html>
+    </nav>
+    <section id="title">
+        <h1>Where to Eat in Chicago</h1>
+       </section>
+<main class="main-content">

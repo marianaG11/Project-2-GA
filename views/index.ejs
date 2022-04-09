@@ -10,7 +10,12 @@
 <body>
     <section class="welcome">
         <h1>Welcome to Chicago!</h1>
-        <a href="/restaurants">Just Want to view!</a>
+        <% if (user) { %>
+            <a href="/logout" class="log-out">Log Out</a>
+          <% } else { %>
+            <a href="/auth/google" class="login">Log In&nbsp;</a>
+          <% } %>
+        <a href="/restaurants">Just Want to View!</a>
     </section>
 </body>
 </html>

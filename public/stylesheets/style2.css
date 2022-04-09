@@ -1,0 +1,42 @@
+
+body {
+    display: grid;
+    height: 2000px;
+    width: 1800px;
+}
+
+
+
+.login {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 34px;
+  }
+  
+.login img {
+    height: 30px;
+}
+
+.log-out {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 34px;
+}
+
+nav {
+    background-color: bisque;
+    height: 50px;
+    width: 1500px;
+}
+
+.main-content {
+    width: 1500px;
+    height: 2000px;
+}
+
+body > .main-content{
+ justify-content:center;
+}
+

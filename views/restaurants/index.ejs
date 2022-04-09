@@ -1,19 +1,4 @@
 <%- include('../partials/header') %>
-<table>
-    <thread>
-        <th>Title</th>
-        <th>Food Type</th>
-        <th>Reviews</th>
-        <th>Location(s)</th>
-    </thread>
-    <tbody>
-        <% restaurants.forEach(function(r){ %> 
-        <tr>
-            <td><%= r.title %></td>
-            <td><%= r.foodType %></td>
-        </tr>
-        <% }); %> 
-    </tbody>
-</table>
 
+<!-- above should go in show make show function -->
 <%- include('../partials/footer') %>
