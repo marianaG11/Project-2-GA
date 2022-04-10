@@ -11,20 +11,20 @@ module.exports = {
 function index (req, res){
     Restaurant.find({}, function(err, restaurant){
         console.log(restaurant)
-        res.render('restaurants/index', {title: 'View all restaurants', restaurant});
+        res.render('restaurants/index', {title: 'View All Restaurants', restaurant});
             
     });
 }
 
 function show (req, res){
     Restaurant.findById(req.params.id, function(err, restaurant){
-        res.render('restaurants/show', {title: 'restaurant-details', restaurant: restaurant});
+        res.render('restaurants/show', {title: 'restaurant details', restaurant: restaurant});
         console.log(restaurant);
     });
 }
 
 function newRestaurant(req, res){
-    res.render('restaurants/new', {title: 'Add Restaurant'}); 
+    res.render('restaurants/new', {title: 'Add a Restaurant'}); 
 }
 
 function create(req, res){
