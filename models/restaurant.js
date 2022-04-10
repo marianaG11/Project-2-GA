@@ -21,13 +21,13 @@ const reviewSchema = new Schema({
 
 
 const restaurantSchema = new Schema({
-title: {
+    name: {
     type: String,
     required: true
 },
-foodType: String,
-reviews: [reviewSchema],
-location: String
+    foodType: String,
+    reviews: [reviewSchema],
+    location: String
 });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);

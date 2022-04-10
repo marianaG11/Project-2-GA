@@ -1,4 +1,15 @@
 <%- include('../partials/header') %>
+<section>
+    <div>Name: <%= restaurant.name %></div>
+    <div>Food Type: <%= restaurant.foodType %></div>
+    <div>Location: <%= restaurant.location%></div>
+    <div>
+        <% restaurant.forEach(function(r){ %>
+        <section>
+            <a href="/restaurants/<%=r._id%>">View More</a>
+        </section>
+       <% }); %> 
+    </div>
+</section>
 
-<!-- above should go in show make show function -->
 <%- include('../partials/footer') %>

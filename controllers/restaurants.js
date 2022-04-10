@@ -2,21 +2,38 @@ const Restaurant = require('../models/restaurant');
 
 module.exports = {
     index, 
-    show
+    show, 
+    new: newRestaurant,
+    create
 }
 
 
 function index (req, res){
-    Restaurant.find({}, function(err, restaurants){
-        res.render('restaurants/index', {
-            restaurants,
-            title: 'view all restaurants'
-        });
+    Restaurant.find({}, function(err, restaurant){
+        console.log(restaurant)
+        res.render('restaurants/index', {title: 'View all restaurants', restaurant});
+            
     });
 }
 
 function show (req, res){
-    Restaurant.findById(req.params.id, function(err, restaurants){
-        res.render('restaurants/show', restaurants);
-    })
+    Restaurant.findById(req.params.id, function(err, restaurant){
+        res.render('restaurants/show', {title: 'restaurant-details', restaurant: restaurant});
+        console.log(restaurant);
+    });
+}
+
+function newRestaurant(req, res){
+    res.render('restaurants/new', {title: 'Add Restaurant'}); 
+}
+
+function create(req, res){
+    const restaurant = new Restaurant(req.body);
+    console.log(restaurant)
+
+    restaurant.save(function(err){
+        console.log(err)
+        if(err) return res.render('restaurants/new');
+        res.redirect(`/restaurants/${restaurant._id}`);
+    });
 }
