@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+<section>
+    <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+        <!-- Value attribute is being set to the comment's current text -->
+        <input name="comment" value="<%= r.comment %>">
+        <button type="submit">Edit Comment</button>
+      </form>
+</section>
+
+<%- include('../partials/footer') %>
+
+<!-- wont connect to this view, update only shows up in show.ejs-->

@@ -1,17 +1,18 @@
 <%- include('../partials/header') %>
 <section id="restaurant-details">
   <h1>Restaurant Reviews</h1>
+  <h2><%= restaurant.name %></h2>
   <% if (user) { %>
     <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
       <label>Leave a Review:</label>
       <textarea name="comment"></textarea>
       <label>Leave a Rating:</label>
       <select name="rating">
-        <option value="1 Star">1 star</option>
-        <option value="2 Stars">2 stars</option>
-        <option value="3 Stars">3 stars</option>
-        <option value="4 Stars">4 stars</option>
-        <option value="5 Stars">5 stars</option>
+        <option value=1>1 star</option>
+        <option value=2>2 stars</option>
+        <option value=3>3 stars</option>
+        <option value=4>4 stars</option>
+        <option value=5>5 stars</option>
       </select>
       <input type="submit" value="Add Review">
     </form>
@@ -30,6 +31,7 @@
         <tbody>
         <% let total = 0 %>
         <% restaurant.reviews.forEach(function(r) { %>
+          <% console.log(r) %>
         <% total += r.rating %>
         <tr>
             <td class="review-user"><img alt="picture" src="<%= r.userPicture %>"><%= r.userName %></td>
@@ -40,14 +42,16 @@
             <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">Delete</button>
             </form>
-            <% } %>
             </td>
+            <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                <!-- Value attribute is being set to the comment's current text -->
+                <input name="comment" value="<%= r.comment %>">
+                <button type="submit">Update</button>
+              </form>
+            <% } %>
         </tr>
         </tbody>
     </table>
   <% }); %>
-
-
-
 
 <%- include('../partials/footer') %>

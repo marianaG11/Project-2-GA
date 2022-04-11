@@ -7,8 +7,8 @@ const reviewSchema = new Schema({
         required: true
     },
     rating: {
-        type: Number, 
-        min: 0, max: 5, default: 3
+        type: Number,  //option value in show.ejs has to match a number
+        min: 1, max: 5, default: 3
     },
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,

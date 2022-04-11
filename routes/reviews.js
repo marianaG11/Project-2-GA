@@ -6,4 +6,7 @@ router.post('/restaurants/:id/reviews', reviewsCtrl.create);
 
 router.delete('/reviews/:id', reviewsCtrl.delete);
 
+router.put('/reviews/:id', reviewsCtrl.update);
+
+
 module.exports = router;

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const restaurantsCtrl = require('../controllers/restaurants');
-
+//require the middleware
 const isLoggedIn = require('../config/auth');
 
 router.get('/', restaurantsCtrl.index);
@@ -12,6 +12,7 @@ router.get('/new', restaurantsCtrl.new);
 router.get('/:id', restaurantsCtrl.show);
 
 
-router.post('/', restaurantsCtrl.create);
+router.post('/', isLoggedIn, restaurantsCtrl.create); //isLoggedIn is a middleware function
+//it calls next()
 
 module.exports = router;
