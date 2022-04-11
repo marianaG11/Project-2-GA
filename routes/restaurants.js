@@ -10,6 +10,8 @@ router.get('/', restaurantsCtrl.index);
 router.get('/new', restaurantsCtrl.new);
 
 router.get('/:id', restaurantsCtrl.show);
-module.exports = router;
+
 
 router.post('/', restaurantsCtrl.create);
+
+module.exports = router;

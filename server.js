@@ -20,7 +20,7 @@ require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const restaurantsRouter =require('./routes/restaurants');
-
+const reviewsRouter = require('./routes/reviews');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -53,7 +53,8 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/restaurants', restaurantsRouter);
-// app.use('/', reviewsRouter);
+app.use('/', reviewsRouter);
+
 
 // invalid request, send 404 page
 app.use(function(req, res) {

@@ -40,3 +40,26 @@ body > .main-content{
  justify-content:center;
 }
 
+.review-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+.review-user img {
+    height: 30px;
+    width: 30px;
+  } 
+
+td, th, table {
+    text-align: center;
+    padding: 14px;
+}
+.restaurants-main{
+   padding: 13px 0px 13px 0px;
+}
+
+/* #add-review-form{
+    padding: 10px 10px 10px 10px;
+} */
