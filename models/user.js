@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     email: String,
-    picture: String
+    picture: String,
+    favorites: Array
 }, {
     timestamps: true
 });

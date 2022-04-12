@@ -2,6 +2,7 @@
 <section id="restaurant-details">
   <h1>Restaurant Reviews</h1>
   <h2><%= restaurant.name %></h2>
+  </form>
   <% if (user) { %>
     <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
       <label>Leave a Review:</label>
@@ -16,6 +17,10 @@
       </select>
       <input type="submit" value="Add Review">
     </form>
+    <form id="favorites" method="GET" action="/restaurants/favorites">
+      <button type="submit">Add to Favorites</button>
+    </form>
+    </section>
   <% } %>
 </section>
 
