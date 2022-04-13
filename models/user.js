@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     },
     email: String,
     picture: String,
-    favorites: Array
+    favorites: {type: [Schema.Types.ObjectId], ref: 'Restaurant' }
 }, {
     timestamps: true
 });

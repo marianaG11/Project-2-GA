@@ -37,6 +37,7 @@ body{
   text-align: center;
   background-color: white;
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(255, 0, 0));
+  border-radius: 12px;
  
 }
 

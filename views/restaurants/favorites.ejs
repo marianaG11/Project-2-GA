@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<section class="favorites">
+    <div>
+        <% user.favorites.forEach(function(restaurant){ %>
+        <section class="restaurants-main">
+            <div>Name: <%= restaurant.name %></div>
+            <div>Food Type: <%= restaurant.foodType %></div>
+            <div>Location: <%= restaurant.location%></div>
+        </section>
+       <% }); %> 
+    </div>
+</section>
+
+
+
+
+
+<%- include('../partials/footer') %>

@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<section id="restaurant-details">
+<section class="restaurant-details">
   <h1>Restaurant Reviews</h1>
   <h2><%= restaurant.name %></h2>
   </form>
@@ -17,12 +17,16 @@
       </select>
       <input type="submit" value="Add Review">
     </form>
-    <form id="favorites" method="GET" action="/restaurants/favorites">
+    
+    <form id="favorites" method="POST" action="/restaurants/favorites/add/<%= restaurant._id %>?_method=PUT">
+      <input type="hidden" name="name" value = "<%=restaurant.name%>"/>
+      <input type="hidden" name="foodType" value = "<%=restaurant.foodType%>"/>
+      <input type="hidden" name="location" value = "<%=restaurant.location%>"/>
       <button type="submit">Add to Favorites</button>
     </form>
     </section>
   <% } %>
-</section>
+
 
 <table>
     <thead>
@@ -36,7 +40,6 @@
         <tbody>
         <% let total = 0 %>
         <% restaurant.reviews.forEach(function(r) { %>
-          <% console.log(r) %>
         <% total += r.rating %>
         <tr>
             <td class="review-user"><img alt="picture" src="<%= r.userPicture %>"><%= r.userName %></td>

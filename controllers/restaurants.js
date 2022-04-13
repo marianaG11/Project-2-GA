@@ -1,20 +1,20 @@
-// const { name } = require('ejs');
-// const UserInfoError = require('passport-google-oauth20/lib/errors/userinfoerror');
-const Restaurant = require('../models/restaurant');
 const User = require('../models/user');
+const Restaurant = require('../models/restaurant');
+
 
 module.exports = {
     index, 
     show, 
     new: newRestaurant,
     create,
-    favorites
+    addToFavorites,
+    showFavorites
 }
 
 
 function index (req, res){
     Restaurant.find({}, function(err, restaurants){
-        console.log(restaurants)
+       
         res.render('restaurants/index', {title: 'View All Restaurants', restaurants});
             
     });
@@ -23,7 +23,7 @@ function index (req, res){
 function show (req, res){
     Restaurant.findById(req.params.id, function(err, restaurant){
         res.render('restaurants/show', {title: 'Restaurant Details', restaurant: restaurant});
-        console.log(restaurant);
+       
     });
 }
 
@@ -33,7 +33,7 @@ function newRestaurant(req, res){
 
 function create(req, res){
     const restaurant = new Restaurant(req.body);
-    console.log(restaurant)
+   
 
     restaurant.save(function(err){
         console.log(err)
@@ -42,18 +42,29 @@ function create(req, res){
     });
 }
 
-function favorites(req, res){
+
+function addToFavorites(req, res){
     Restaurant.findById(req.params.id, function(err, restaurant){
-        // console.log(req.params.id, 'restaurant id')
-        // console.log(restaurant, 'restaurant object');
-        console.log(req.user._id, 'user')
         User.findById(req.user._id, function(err, user){
+        
             user.favorites.push(restaurant);
-            console.log(user.favorites, 'favs');
-            res.render('favorites/index', {title: 'favorites', user: user, favorites: user.favorites});
-            console.log(user, 'userrrr')
+            user.save(function(err){
+            console.log(user)
+            res.redirect(`/restaurants/${req.params.id}`);
+            })
         })
-        // res.render('favorites/index', {title: 'favorites',restaurant: restaurant});
-        console.log(err)
     });
+}
+
+function showFavorites(req, res){
+    User.findById(req.user._id, function(err, user){
+       Restaurant.find({
+           '_id': {
+               $in: user.favorites
+           }
+       }, function(err, favorites, restaurant){
+            res.render('restaurants/favorites', {title:'My Favorites', favorites, restaurant: restaurant})
+        //    res.render() //ejs for listings page, pass to ejs, pass favorites //then for each loop in ejs 
+       })
+    })
 }

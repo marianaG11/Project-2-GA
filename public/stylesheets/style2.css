@@ -1,17 +1,59 @@
 
 body {
     display: grid;
-    height: 2000px;
-    width: 1800px;
-    /* background:url(https://images.unsplash.com/photo-1565709736796-96a4d2fb91e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1530&q=80);
+    height: 100%;
+    /* background-image :url(https://images.unsplash.com/photo-1565709736796-96a4d2fb91e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1530&q=80);
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-  background-position: 1000px; */
+    background-position: 1000px; */
+
+}
+
+.bg-image {
+    background-image:url(https://images.unsplash.com/photo-1565709736796-96a4d2fb91e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1530&q=80);
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+    margin-top: 45px;
+    width: 1500px;
+    height: 2000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+
+.main-container{
+  position: relative;
+  width: 1500px;
+  height: 2000px;
 
 }
 
 
+.main-content{
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+} 
+
+
+a {
+  width: 80px;
+  height: 60px;
+  justify-content: center;
+  
+}
 
 .login {
     display: flex;
@@ -20,8 +62,10 @@ body {
     height: 34px;
   }
   
-.login img {
+a img {
     height: 30px;
+    width: 30px;
+    margin-top: 15px;
 }
 
 .log-out {
@@ -34,7 +78,8 @@ body {
 nav {
     background-color: bisque;
     height: 50px;
-    width: 1500px;
+    width: 1530px;
+    text-align: center;
 }
 
 .main-content {
@@ -67,7 +112,13 @@ td, th, table {
    /* background:rgba(255,255,255,.5); */
 }
 
+#new-form {
+  margin: 0px 10px 0px 10px;
+}
+
+
 
 nav > a {
     margin: 7px;
 }
+

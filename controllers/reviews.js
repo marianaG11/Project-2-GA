@@ -13,7 +13,6 @@ function create(req, res){
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.userPicture = req.user.picture;
-        console.log(req.body, 'hello');
         restaurant.reviews.push(req.body);
         restaurant.save(function(err){
             console.log(err)
