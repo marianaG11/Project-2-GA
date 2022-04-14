@@ -9,12 +9,33 @@ body {
 }
 
 .main-container {
+  margin: 0 auto;
   background-color: white;
   text-align: center;
   align-items: center;
   justify-content: center;
-
+  height: 100vh;
+  overflow-y: scroll;
+  width: 80%;
+  /* opacity: 0.5; */
 }
+
+.restaurants-image {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.images img {
+  width: 155px;
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 12px;
+}
+
+
+
 
 a {
   width: 115px;
@@ -85,3 +106,7 @@ nav > a {
     text-align: center;
   }
 }
+
+/* .images {
+  opacity: 1;
+} */

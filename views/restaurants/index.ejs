@@ -5,13 +5,16 @@
 <section class="restaurants-main">
     <div>
         <% restaurants.forEach(function(r){ %>
-        <section class="restaurants-main">
+        <div class="restaurants-image">
+            <div class="images"><img src="<%= r.picture %>"></div>
+        
+        <div class="restaurant-info">
             <div>Name: <%= r.name %></div>
             <div>Food Type: <%= r.foodType %></div>
             <div>Location: <%= r.location%></div>
             <a href="/restaurants/<%=r._id%>">View More</a>
-
-        </section>
+        </div>
+        </div>
        <% }); %> 
     </div>
 </section>

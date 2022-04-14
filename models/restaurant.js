@@ -28,6 +28,7 @@ const restaurantSchema = new Schema({
     foodType: String,
     reviews: [reviewSchema],
     location: String,
+    picture: String
 });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);
