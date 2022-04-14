@@ -63,6 +63,7 @@ function showFavorites(req, res){
                $in: user.favorites
            }
        }, function(err, favorites, restaurant){
+           console.log(favorites)
             res.render('restaurants/favorites', {title:'My Favorites', favorites, restaurant: restaurant})
         //    res.render() //ejs for listings page, pass to ejs, pass favorites //then for each loop in ejs 
        })

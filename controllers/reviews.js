@@ -14,8 +14,10 @@ function create(req, res){
         req.body.userName = req.user.name;
         req.body.userPicture = req.user.picture;
         restaurant.reviews.push(req.body);
-        restaurant.save(function(err){
-            console.log(err)
+        restaurant.save(function(err){ 
+            if (err) {
+                console.log(err)
+            }
             res.redirect(`/restaurants/${restaurant._id}`)
         });
     });

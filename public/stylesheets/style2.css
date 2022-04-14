@@ -2,12 +2,11 @@
 body {
     display: grid;
     height: 100%;
-    /* background-image :url(https://images.unsplash.com/photo-1565709736796-96a4d2fb91e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1530&q=80);
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    background-position: 1000px; */
-
+    /* width: 100vh; */
+    justify-items: center;
+    /* background-image:url(https://images.unsplash.com/photo-1565709736796-96a4d2fb91e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1530&q=80);
+    background-repeat: no-repeat; */
+    background-color: lightblue;
 }
 
 .bg-image {
@@ -15,18 +14,19 @@ body {
     filter: blur(6px);
     -webkit-filter: blur(6px);
     margin-top: 45px;
-    width: 1500px;
+    width: 1530px;
     height: 2000px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
+    
 }
 
 
 .main-container{
   position: relative;
-  width: 1500px;
+  width: 1530px;
   height: 2000px;
 
 }
@@ -45,6 +45,9 @@ body {
     padding: 20px;
     text-align: center;
     z-index: 2;
+    justify-content:center;
+    width: 1530px;
+    height: 2000px;
 } 
 
 
@@ -55,40 +58,12 @@ a {
   
 }
 
-.login {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    height: 34px;
-  }
-  
-a img {
-    height: 30px;
-    width: 30px;
-    margin-top: 15px;
-}
-
-.log-out {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    height: 34px;
-}
 
 nav {
     background-color: bisque;
     height: 50px;
-    width: 1530px;
+    width: 1576px;
     text-align: center;
-}
-
-.main-content {
-    width: 1500px;
-    height: 2000px;
-}
-
-body > .main-content{
- justify-content:center;
 }
 
 .review-user {
@@ -101,6 +76,8 @@ body > .main-content{
 .review-user img {
     height: 30px;
     width: 30px;
+    border-radius: 10px;
+    margin-right: 8px;
   }
 
 td, th, table {
@@ -109,7 +86,7 @@ td, th, table {
 }
 .restaurants-main{
    padding: 13px 0px 13px 0px;
-   /* background:rgba(255,255,255,.5); */
+  
 }
 
 #new-form {
@@ -122,3 +99,11 @@ nav > a {
     margin: 7px;
 }
 
+#favorites {
+  margin-bottom: 13px;
+  
+}
+
+.update {
+  margin-top: 13px;
+}

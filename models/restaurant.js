@@ -27,7 +27,7 @@ const restaurantSchema = new Schema({
 },
     foodType: String,
     reviews: [reviewSchema],
-    location: String
+    location: String,
 });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);

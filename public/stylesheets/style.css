@@ -27,7 +27,11 @@ body{
   width: 1800px;
   background: url(https://cdn.choosechicago.com/uploads/2021/10/choose-chicago-homepage-slider-cnt.jpg);
   background-size: cover;
-  background-position: 1900px;
+  background-position: center center;
+  background-attachment: fixed;
+
+  
+  
 }
 .welcome{
   width: 500px;
@@ -38,9 +42,17 @@ body{
   background-color: white;
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(255, 0, 0));
   border-radius: 12px;
+  background-attachment: fixed;
+  
  
 }
 
 a {
   margin: 10px;
+}
+@media (max-width: 1000px) {
+  body {
+    width: 1000px;
+    height: 1000px;
+  }
 }
