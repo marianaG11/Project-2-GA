@@ -1,17 +1,21 @@
 <%- include('../partials/header') %>
 
-<section class="favorites">
+<section class="restaurants-main">
     <div>
-        <% favorites.forEach(function(restaurant){ %>
-        <section class="restaurants-main">
-            <div>Name: <%= restaurant.name %></div>
-            <div>Food Type: <%= restaurant.foodType %></div>
-            <div>Location: <%= restaurant.location%></div>
-        </section>
+        <% favorites.forEach(function(r){ %>
+        <div class="restaurants-image">
+            <div class="images"><img src="<%= r.picture %>"></div>
+        
+        <div class="restaurant-info">
+            <div>Name: <%= r.name %></div>
+            <div>Food Type: <%= r.foodType %></div>
+            <div>Location: <%= r.location%></div>
+            <a href="/restaurants/<%=r._id%>">View More</a>
+        </div>
+        </div>
        <% }); %> 
     </div>
 </section>
-
 
 
 
