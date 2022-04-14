@@ -29,39 +29,42 @@
   </section>
   <% } %>
 
-
-<table>
-    <thead>
-        <tr>
-            <th>Reviewed by:</th>
-            <th>Date Posted:</th>
-            <th>Rating:</th>
-            <th>Comment:</th>
-        </tr>
-    </thead>
-        <tbody>
-        <% let total = 0 %>
-        <% restaurant.reviews.forEach(function(r) { %>
-        <% total += r.rating %>
-        <tr>
-            <td class="review-user"><img alt="picture" src="<%= r.userPicture %>"><%= r.userName %></td>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.rating %></td>
-            <td><%= r.comment %></td>
-            <td><% if (user && user._id.equals(r.user)) { %>
-            <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
-            </form>
-            </td>
-            <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-                <!-- Value attribute is being set to the comment's current text -->
-                <input name="comment" value="<%= r.comment %>">
-                <button type="submit">Update</button>
+<% if (restaurant.reviews.length) { %>
+  <table>
+      <thead>
+          <tr>
+              <th>Reviewed by:</th>
+              <th>Date Posted:</th>
+              <th>Rating:</th>
+              <th>Comment:</th>
+          </tr>
+      </thead>
+          <tbody>
+          <% let total = 0 %>
+          <% restaurant.reviews.forEach(function(r) { %>
+          <% total += r.rating %>
+          <tr>
+              <td class="review-user"><img alt="picture" src="<%= r.userPicture %>"><%= r.userName %></td>
+              <td><%= r.createdAt.toLocaleDateString() %></td>
+              <td><%= r.rating %></td>
+              <td><%= r.comment %></td>
+              <td><% if (user && user._id.equals(r.user)) { %>
+              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                  <button type="submit">Delete</button>
               </form>
-            <% } %>
-        </tr>
-        </tbody>
-    </table>
-  <% }); %>
+              </td>
+              <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                  <!-- Value attribute is being set to the comment's current text -->
+                  <input name="comment" value="<%= r.comment %>">
+                  <button type="submit">Update</button>
+                </form>
+              <% } %>
+          </tr>
+          </tbody>
+      </table>
+    <% }); %>
+  <% } else { %>
+      <h2>Be the first to review!</h2>
+    <% } %>
 
 <%- include('../partials/footer') %>

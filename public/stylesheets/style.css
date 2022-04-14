@@ -23,8 +23,8 @@ body{
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 1500px;
-  width: 1800px;
+  height: 100vh;
+  width: 100%;
   background: url(https://cdn.choosechicago.com/uploads/2021/10/choose-chicago-homepage-slider-cnt.jpg);
   background-size: cover;
   background-position: center center;
@@ -42,7 +42,7 @@ body{
   background-color: white;
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(255, 0, 0));
   border-radius: 12px;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   
  
 }
@@ -50,9 +50,26 @@ body{
 a {
   margin: 10px;
 }
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   body {
     width: 1000px;
     height: 1000px;
   }
+} */
+
+@media (max-width: 450px) {
+  body {
+    background-image: url(https://cdn.choosechicago.com/uploads/2021/10/choose-chicago-homepage-slider-cnt.jpg);
+    justify-content: center;
+    align-items: center;
+ }
+ .welcome {
+   width: 250px;
+ }
 }
+
+/* @media(min-width: 1025px) {
+  .welcome {
+
+  }
+} */
