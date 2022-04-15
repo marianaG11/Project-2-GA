@@ -6,7 +6,7 @@ Users can sign in with their Google account and have access to features like add
 
 ## Images
 ### Landing page
-![landing page](/public/images/landing-page.png)
+![landing page](/public/images/welcome-page.png)
 ### Main page
 ![main page](/public/images/Main-page.png)
 
