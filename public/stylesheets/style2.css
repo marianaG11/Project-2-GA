@@ -17,7 +17,7 @@ body {
   height: 100vh;
   overflow-y: scroll;
   width: 80%;
-  /* opacity: 0.5; */
+  opacity: 0.9;
 }
 
 .restaurants-image {
@@ -65,6 +65,7 @@ body > nav {
     height: 60px;
     width: 80%;
     margin: 0 auto;
+    opacity: 0.9;
 }
 
 .review-user {
@@ -122,10 +123,12 @@ nav > a {
   }
 }
 
-/* .images {
-  opacity: 1;
-} */
 
 .link {
   margin-left: 7px;
 }
+
+h1, title {
+  font-family: "Bungee Shade";
+}
+

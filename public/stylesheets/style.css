@@ -40,7 +40,7 @@ body{
   background-color: white;
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(243, 138, 129));
   border-radius: 12px;
-  /* background-attachment: fixed; */
+  
   
  
 }
@@ -48,12 +48,7 @@ body{
 a {
   margin: 10px;
 }
-/* @media (max-width: 1000px) {
-  body {
-    width: 1000px;
-    height: 1000px;
-  }
-} */
+
 
 @media (max-width: 450px) {
   body {
@@ -66,8 +61,8 @@ a {
  }
 }
 
-/* @media(min-width: 1025px) {
-  .welcome {
 
-  }
-} */
+h1 {
+  font-family: "Homemade Apple", cursive;
+  font-size: x-large;
+}

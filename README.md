@@ -35,6 +35,8 @@ To launch the app [click here!](https://project-2-ga.herokuapp.com)
 * Use Google Maps API to avoid adding images and links manually.
 
 
-
+#### Background Images by:
+* Choosechicago.com
+* Unsplash.com
 
 
