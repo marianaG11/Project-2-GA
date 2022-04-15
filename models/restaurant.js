@@ -25,11 +25,11 @@ const restaurantSchema = new Schema({
     type: String,
     required: true
 },
-    foodType: String,
+    foodType: String, 
     reviews: [reviewSchema],
-    location: String,
-    picture: String,
-    link: String
+    location: String, 
+    picture: String, //add in mongoDB
+    link: String //add in mongoDB
 });
 
 module.exports = mongoose.model('Restaurant', restaurantSchema);

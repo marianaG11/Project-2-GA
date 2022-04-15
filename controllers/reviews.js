@@ -8,8 +8,10 @@ module.exports = {
     update
 }
 
+//creates a new review
 function create(req, res){
-    Restaurant.findById(req.params.id, function(err, restaurant){
+    Restaurant.findById(req.params.id, function(err, restaurant){ //find restaurant by its Id
+        //add the user's google account info
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.userPicture = req.user.picture;
@@ -23,7 +25,7 @@ function create(req, res){
     });
 }
 
-
+//deletes a review
 function deleteReview(req, res){
     Restaurant.findOne({'reviews._id': req.params.id}, function(err, restaurantDoc){
         const review = restaurantDoc.reviews.id(req.params.id);
@@ -39,6 +41,7 @@ function deleteReview(req, res){
     });
 };
 
+
 function edit(req, res){
     Restaurant.findOne({'reviews._id': req.params.id}, function(err, restaurantDoc){
         const review = restaurantDoc.reviews.id(req.params.id); 
@@ -46,11 +49,12 @@ function edit(req, res){
     });
 };
 
+//updates a review
 function update(req, res){
     Restaurant.findOne({'reviews._id': req.params.id}, function(err, restaurant){
         //find the review subdoc using the id method 
         const reviewSubdoc = restaurant.reviews.id(req.params.id);
-        if (!reviewSubdoc.user.equals(req.user._id)) return res.redirect(`/restaurants/${restaurant._id}`);
+        if (!reviewSubdoc.user.equals(req.user._id)) return res.redirect(`/restaurants/${restaurant._id}`); //keeps user on restaurants details page
         //updates the text of the review
         reviewSubdoc.comment = req.body.comment;
         //then save the update

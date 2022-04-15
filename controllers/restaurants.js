@@ -11,7 +11,7 @@ module.exports = {
     showFavorites
 }
 
-
+//renders all restaurants view
 function index (req, res){
     Restaurant.find({}, function(err, restaurants){
        
@@ -20,6 +20,7 @@ function index (req, res){
     });
 }
 
+//shows restaurant details
 function show (req, res){
     Restaurant.findById(req.params.id, function(err, restaurant){
         res.render('restaurants/show', {title: 'Restaurant Details', restaurant: restaurant});
@@ -27,6 +28,7 @@ function show (req, res){
     });
 }
 
+//creates a new restaurant 
 function newRestaurant(req, res){
     res.render('restaurants/new', {title: 'Add a Restaurant'}); 
 }
@@ -38,29 +40,29 @@ function create(req, res){
     restaurant.save(function(err){
         console.log(err)
         if(err) return res.render('restaurants/new');
-        res.redirect(`/restaurants/${restaurant._id}`);
+        res.redirect(`/restaurants/${restaurant._id}`); 
     });
 }
 
-
+//adds a restaurant to a favorites page
 function addToFavorites(req, res){
     Restaurant.findById(req.params.id, function(err, restaurant){
         User.findById(req.user._id, function(err, user){
         
-            user.favorites.push(restaurant);
+            user.favorites.push(restaurant); //push into favorites 
             user.save(function(err){
             console.log(user)
-            res.redirect(`/restaurants/${req.params.id}`);
+            res.redirect(`/restaurants/${req.params.id}`); //keep user on restaurant details page
             })
         })
     });
 }
-
+//renders the restaurant to the favorites page
 function showFavorites(req, res){
-    User.findById(req.user._id, function(err, user){
-       Restaurant.find({
+    User.findById(req.user._id, function(err, user){ //first find the user by its id 
+       Restaurant.find({ //find a restaurant by its id
            '_id': {
-               $in: user.favorites
+               $in: user.favorites 
            }
        }, function(err, favorites, restaurant){
            console.log(favorites)
