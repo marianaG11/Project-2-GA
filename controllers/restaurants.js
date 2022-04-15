@@ -62,7 +62,7 @@ function showFavorites(req, res){
     User.findById(req.user._id, function(err, user){ //first find the user by its id 
        Restaurant.find({ //find a restaurant by its id
            '_id': {
-               $in: user.favorites 
+               $in: user.favorites  //$in mongoose operator, takes an array as its value
            }
        }, function(err, favorites, restaurant){
            console.log(favorites)
