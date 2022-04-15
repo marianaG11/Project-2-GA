@@ -18,7 +18,7 @@ Users can sign in with their Google account and have access to features like add
 * Express
 * Mongoose
 * MongoDB
-* passport
+* Passport
 * Google Oauth
 
 ## Getting Started
