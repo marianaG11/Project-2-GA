@@ -13,7 +13,7 @@
         <% if (user) { %>
           <a href="/restaurants/new" <%- title === 'Add a Restaurant' ? 'class="active"' : '' %>>Add a Restaurant</a>
           <a href="/restaurants/favorites" <%- title === 'My Favorites' ? 'class="active"' : '' %>>My Favorites</a>
-          <a href="/logout">Log Out</a>
+          <a  class="log-out" href="/logout">Log Out</a>
         <% } else { %>
           <a href="/auth/google">Log In With Google&nbsp;</a>
         <% } %>
