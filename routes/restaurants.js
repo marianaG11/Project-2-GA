@@ -20,6 +20,5 @@ router.post('/', isLoggedIn, restaurantsCtrl.create); //isLoggedIn is a middlewa
 router.put('/favorites/add/:id', restaurantsCtrl.addToFavorites);
 
 
-// router.get('/favorites', restaurantsCtrl.favorites);
 
 module.exports = router;

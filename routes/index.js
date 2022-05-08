@@ -30,7 +30,7 @@ router.get('/oauth2callback', passport.authenticate(
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/'); //redirect user to welcome page
 });
 
 module.exports = router;
