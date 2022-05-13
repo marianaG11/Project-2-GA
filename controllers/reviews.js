@@ -6,7 +6,7 @@ module.exports = {
     delete: deleteReview,
     edit, 
     update
-}
+};
 
 //creates a new review
 function create(req, res){
@@ -18,12 +18,12 @@ function create(req, res){
         restaurant.reviews.push(req.body); //push the review data to that restaurant
         restaurant.save(function(err){  //save the review
             if (err) {
-                console.log(err)
+                console.log(err);
             }
-            res.redirect(`/restaurants/${restaurant._id}`)
+            res.redirect(`/restaurants/${restaurant._id}`);
         });
     });
-}
+};
 
 //deletes a review
 function deleteReview(req, res){
@@ -62,4 +62,4 @@ function update(req, res){
             res.redirect(`/restaurants/${restaurant._id}`);
         });
     });
-}
+};
