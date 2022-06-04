@@ -2,8 +2,7 @@
 body {
   background-image:url(https://images.unsplash.com/photo-1593059315234-fe82cafe19e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);
   background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+  background-position: center center; 
   justify-content: center;
   align-items: center;
 }
@@ -16,31 +15,22 @@ body {
   justify-content: center;
   height: 100vh;
   overflow-y: scroll;
-  width: 80%;
-  opacity: 0.9;
+  opacity: 0.93;
 }
 
 .restaurants-image {
-  display: flex;
-  text-align: center;
-  width: 50%;
-  margin: 0 auto;
-  gap: 16px;
   padding-bottom: 16px;
 }
-
-.restaurant-info {
- width: 50%;
- text-align:left;
+.restaurants-main{
+  align-items: center;
+  justify-content: center;
+  display: grid;
 }
 
-
-.images img {
-  width: 155px;
-  height: 100px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 12px;
+.card {
+  width: 500px;
+  /* background-color: white !important;
+  opacity: 1 !important; */
 }
 
 .log-out {
@@ -63,7 +53,7 @@ body > nav {
     text-align: center;
     justify-content: center;
     height: 60px;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     opacity: 0.9;
 }
@@ -86,17 +76,18 @@ td, th, table {
     text-align: center;
     padding: 14px;
 }
-.restaurants-main{
-   padding: 13px 0px 13px 0px;
-}
 
 #new-form {
-  margin: 0px 10px 0px 10px;
+  display: grid;
+  /* margin: 0px 10px 0px 10px; */
+  display: contents;
+  /* margin-left: 260px; */
 }
 
 
 nav > a {
     margin: 7px;
+  
 }
 
 #favorites {
@@ -107,6 +98,7 @@ nav > a {
 .update {
   margin-top: 13px;
 }
+
 
 @media (max-width: 450px) {
   body {
@@ -121,7 +113,7 @@ nav > a {
   .restaurants-image {
     display: block;
   }
-}
+} 
 
 
 .link {
@@ -132,3 +124,7 @@ h1, title {
   font-family: "Bungee Shade";
 }
 
+.details-page {
+  display: grid;
+  display: contents;
+}

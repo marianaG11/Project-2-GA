@@ -8,13 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bungee+Shade&family=Homemade+Apple&family=Qwigley&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
     <title>Document</title>
 </head>
 <body>
     <nav>
         <a href="/restaurants"<%- title === 'All Restaurants' ? 'class="active"' : '' %>>All Restaurants</a>
         <% if (user) { %>
-          <a href="/restaurants/new" <%- title === 'Add a Restaurant' ? 'class="active"' : '' %>>Add a Restaurant</a>
+          <a href="/restaurants/new" <%- title === 'Add a Restaurant' ? 'class="active"' : '' %>>New restaurant</a>
           <a href="/restaurants/favorites" <%- title === 'My Favorites' ? 'class="active"' : '' %>>My Favorites</a>
           <a  class="log-out" href="/logout">Log Out</a>
         <% } else { %>
