@@ -37,7 +37,9 @@ body {
   width: 65px;
 }
 
-
+.container {
+  width: 50%;
+}
 a {
   width: 115px;
   height: 60px;
@@ -87,6 +89,7 @@ td, th, table {
 
 nav > a {
     margin: 7px;
+    width: 150px;
   
 }
 
@@ -114,7 +117,6 @@ nav > a {
     display: block;
   }
 } 
-
 
 .link {
   margin-left: 7px;

@@ -1,72 +1,74 @@
 <%- include('../partials/header') %>
-<div class="details-page">
-  <section class="restaurant-details">
-    <h1>Restaurant Reviews</h1>
-    <h2><%= restaurant.name %></h2>
-    <% if (user) { %>
-      <form id="favorites" method="POST" action="/restaurants/favorites/add/<%= restaurant._id %>?_method=PUT">
-        <input type="hidden" name="name" value = "<%=restaurant.name%>"/>
-        <input type="hidden" name="foodType" value = "<%=restaurant.foodType%>"/>
-        <input type="hidden" name="location" value = "<%=restaurant.location%>"/>
-        <button type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4">Add to Favorites</button>
-      </form>
-    
-    <% } %>
-    <% if (user) { %>
-      <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
-        <label>Leave a Review:</label>
-        <textarea name="comment"></textarea>
-        <label>Leave a Rating:</label>
-        <select name="rating" class="browser-default">
-          <option value="" disabled selected>Choose a rating</option>
-          <option value=1>1 star</option>
-          <option value=2>2 stars</option>
-          <option value=3>3 stars</option>
-          <option value=4>4 stars</option>
-          <option value=5>5 stars</option>
-        </select>
-        <input type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4" value="Add Review">
-      </form>
+<div class="container">
+  <div class="details-page">
+    <section class="restaurant-details">
+      <h1>Restaurant Reviews</h1>
+      <h2><%= restaurant.name %></h2>
+      <% if (user) { %>
+        <form id="favorites" method="POST" action="/restaurants/favorites/add/<%= restaurant._id %>?_method=PUT">
+          <input type="hidden" name="name" value = "<%=restaurant.name%>"/>
+          <input type="hidden" name="foodType" value = "<%=restaurant.foodType%>"/>
+          <input type="hidden" name="location" value = "<%=restaurant.location%>"/>
+          <button type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4">Add to Favorites</button>
+        </form>
       
-    </section>
-    <% } %>
-
-  <% if (restaurant.reviews.length) { %>
-    <table>
-        <thead>
-            <tr>
-                <th>Reviewed by:</th>
-                <th>Date Posted:</th>
-                <th>Rating:</th>
-                <th>Comment:</th>
-            </tr>
-        </thead>
-            <tbody>
-            <% let total = 0 %>
-            <% restaurant.reviews.forEach(function(r) { %>
-            <% total += r.rating %>
-            <tr>
-                <td class="review-user"><img alt="picture" src="<%= r.userPicture %>"><%= r.userName %></td>
-                <td><%= r.createdAt.toLocaleDateString() %></td>
-                <td><%= r.rating %></td>
-                <td><%= r.comment %></td>
-                <td><% if (user && user._id.equals(r.user)) { %>
-                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4">Delete</button>
-                </form>
-                </td>
-                <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-                    <!-- Value attribute is being set to the comment's current text -->
-                    <input name="comment" value="<%= r.comment %>">
-                    <button type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4">Update Review</button>
-                  </form>
-                <% } %>
-            </tr>
-            </tbody>
-        </table>
-      <% }); %>
-    <% } else { %>
-        <h2>Be the first to review!</h2>
       <% } %>
+      <% if (user) { %>
+        <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
+          <label>Leave a Review:</label>
+          <textarea name="comment"></textarea>
+          <label>Leave a Rating:</label>
+          <select name="rating" class="browser-default">
+            <option value="" disabled selected>Choose a rating</option>
+            <option value=1>1 star</option>
+            <option value=2>2 stars</option>
+            <option value=3>3 stars</option>
+            <option value=4>4 stars</option>
+            <option value=5>5 stars</option>
+          </select>
+          <input type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4" value="Add Review">
+        </form>
+        
+      </section>
+      <% } %>
+
+    <% if (restaurant.reviews.length) { %>
+      <table>
+          <thead>
+              <tr>
+                  <th>Reviewed by:</th>
+                  <th>Date Posted:</th>
+                  <th>Rating:</th>
+                  <th>Comment:</th>
+              </tr>
+          </thead>
+              <tbody>
+              <% let total = 0 %>
+              <% restaurant.reviews.forEach(function(r) { %>
+              <% total += r.rating %>
+              <tr>
+                  <td class="review-user"><img alt="picture" src="<%= r.userPicture %>"><%= r.userName %></td>
+                  <td><%= r.createdAt.toLocaleDateString() %></td>
+                  <td><%= r.rating %></td>
+                  <td><%= r.comment %></td>
+                  <td><% if (user && user._id.equals(r.user)) { %>
+                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                      <button type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4">Delete</button>
+                  </form>
+                  </td>
+                  <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                      <!-- Value attribute is being set to the comment's current text -->
+                      <input name="comment" value="<%= r.comment %>">
+                      <button type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4">Update Review</button>
+                    </form>
+                  <% } %>
+              </tr>
+              </tbody>
+          </table>
+        <% }); %>
+      <% } else { %>
+          <h2>Be the first to review!</h2>
+        <% } %>
+  </div>
 </div>
 <%- include('../partials/footer') %>
