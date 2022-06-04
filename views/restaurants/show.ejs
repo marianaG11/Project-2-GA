@@ -18,7 +18,7 @@
         <textarea name="comment"></textarea>
         <label>Leave a Rating:</label>
         <select name="rating" class="browser-default">
-          <option value="" disabled selected>Choose your option</option>
+          <option value="" disabled selected>Choose a rating</option>
           <option value=1>1 star</option>
           <option value=2>2 stars</option>
           <option value=3>3 stars</option>
@@ -52,7 +52,7 @@
                 <td><%= r.comment %></td>
                 <td><% if (user && user._id.equals(r.user)) { %>
                 <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">Delete</button>
+                    <button type="submit" class="waves-effect waves-light btn-small #ffe0b2 orange lighten-4">Delete</button>
                 </form>
                 </td>
                 <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
